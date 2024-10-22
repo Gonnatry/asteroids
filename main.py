@@ -42,6 +42,12 @@ def main():
                  checking = ast.collision(player)
                  if checking == True:
                       raise SystemExit("Game over!")
+            for ast in asteroids:
+                 for sho in shots:
+                      checking = ast.collision(sho)
+                      if checking == True:
+                           ast.split()
+                           sho.kill()
             for sho in shots:
                  sho.update(dt)
             for draw in drawable:
